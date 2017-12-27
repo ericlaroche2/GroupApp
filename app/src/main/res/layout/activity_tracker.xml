@@ -31,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+      >
 
         <RadioButton
             android:id="@+id/radioWalking"
@@ -40,7 +41,7 @@
             android:text="@string/walking"
             tools:layout_editor_absoluteX="237dp"
             tools:layout_editor_absoluteY="0dp"
-
+            android:onClick="onRadioButtonClicked"
             />
 
         <RadioButton
@@ -50,7 +51,7 @@
             android:text="@string/biking"
             tools:layout_editor_absoluteX="138dp"
             tools:layout_editor_absoluteY="16dp"
-
+            android:onClick="onRadioButtonClicked"
             />
 
         <RadioButton
@@ -59,7 +60,9 @@
             android:layout_height="wrap_content"
             android:text="@string/swimming"
             tools:layout_editor_absoluteX="138dp"
-            tools:layout_editor_absoluteY="56dp" />
+            tools:layout_editor_absoluteY="56dp"
+            android:onClick="onRadioButtonClicked"
+            />
 
         <RadioButton
             android:id="@+id/radioSkating"
@@ -68,7 +71,7 @@
             android:text="@string/skating"
             tools:layout_editor_absoluteX="259dp"
             tools:layout_editor_absoluteY="16dp"
-
+            android:onClick="onRadioButtonClicked"
             />
 
         <RadioButton
@@ -78,7 +81,7 @@
             android:text="@string/running"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp"
-
+            android:onClick="onRadioButtonClicked"
             />
     </RadioGroup>
 
@@ -89,7 +92,7 @@
         android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="228dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editText4"
@@ -110,7 +113,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/enterComment"
         android:layout_width="335dp"
         android:layout_height="120dp"
         android:layout_marginBottom="132dp"
@@ -135,6 +138,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/enterComment" />
 
 </android.support.constraint.ConstraintLayout>
