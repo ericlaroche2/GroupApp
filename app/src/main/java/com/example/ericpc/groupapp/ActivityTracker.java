@@ -132,18 +132,16 @@ public class ActivityTracker extends Activity {
 
                 activityTypeArray.add(activityType);
                 contentValue.put(ActivityDatabaseHelper.ACTIVITY_TYPE, activityType);
-                db.insert(ActivityDatabaseHelper.TABLE_NAME, "Null Replacement Value", contentValue);
+
 
 
 
                 minutesArray.add(numberOfMinutes);
                 contentValue.put(ActivityDatabaseHelper.MINUTES, numberOfMinutes);
-                db.insert(ActivityDatabaseHelper.TABLE_NAME, "Null Replacement Value", contentValue);
 
 
                 commentsArray.add(enterComment.getText().toString());
                 contentValue.put(ActivityDatabaseHelper.COMMENTS, enterComment.getText().toString());
-                db.insert(ActivityDatabaseHelper.TABLE_NAME, "Null Replacement Value", contentValue);
 
 
                 DateFormat df = new SimpleDateFormat("dd MM yyyy, HH:mm");
@@ -159,8 +157,8 @@ public class ActivityTracker extends Activity {
                 Toast toast = Toast.makeText(ActivityTracker.this , "Successfully saved activity information.", duration);
                 toast.show();
 
-                ARRAYS_INDEX_COUNTER++;
-                Log.i("ActivityTracker ", "SQL MESSAGE: " + activityTypeArray.get(ARRAYS_INDEX_COUNTER) + " " + minutesArray.get(ARRAYS_INDEX_COUNTER) + " " + commentsArray.get(ARRAYS_INDEX_COUNTER) + " " + dateArray.get(ARRAYS_INDEX_COUNTER));
+               // ARRAYS_INDEX_COUNTER++;
+               // Log.i("ActivityTracker ", "SQL MESSAGE: " + activityTypeArray.get(ARRAYS_INDEX_COUNTER) + " " + minutesArray.get(ARRAYS_INDEX_COUNTER) + " " + commentsArray.get(ARRAYS_INDEX_COUNTER) + " " + dateArray.get(ARRAYS_INDEX_COUNTER));
 
 
 

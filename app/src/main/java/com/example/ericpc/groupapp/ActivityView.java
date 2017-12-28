@@ -35,7 +35,7 @@ public class ActivityView extends Activity {
 
         dbHelper = new ActivityDatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-
+       // db.delete(ActivityDatabaseHelper.TABLE_NAME, null,null);
         c = db.rawQuery("SELECT * FROM " + ActivityDatabaseHelper.TABLE_NAME, null);
         int columnIndexActivity = c.getColumnIndex(ActivityDatabaseHelper.ACTIVITY_TYPE);
         int columnIndexMinutues = c.getColumnIndex(ActivityDatabaseHelper.MINUTES);
@@ -99,7 +99,7 @@ public class ActivityView extends Activity {
 
 
             TextView message = result.findViewById(R.id.textView2);
-            message.setText(getItem(position)); // get the string at position
+            message.setText("Time: " + minutesArray.get(position) + ", Comment: " + commentsArray.get(position) + ", Date: " + dateArray.get(position)); // get the string at position
             return result;
 
 
