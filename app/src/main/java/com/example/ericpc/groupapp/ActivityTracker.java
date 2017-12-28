@@ -3,6 +3,7 @@ package com.example.ericpc.groupapp;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -32,10 +33,10 @@ public class ActivityTracker extends Activity {
     private ActivityDatabaseHelper dbHelper;
     private SQLiteDatabase db;
     private Cursor c;
-    ArrayList<String> activityTypeArray = new ArrayList<String>();
-    ArrayList<Double> minutesArray = new ArrayList<Double>();
-    ArrayList<String> commentsArray = new ArrayList<String>();
-    ArrayList<String> dateArray = new ArrayList<String>();
+    private  ArrayList<String> activityTypeArray = new ArrayList<String>();
+    private ArrayList<Double> minutesArray = new ArrayList<Double>();
+    private ArrayList<String> commentsArray = new ArrayList<String>();
+    private  ArrayList<String> dateArray = new ArrayList<String>();
    // when the activity is filed out, enter to push data into the database
     private Button enter;
     private ContentValues contentValue;
@@ -44,7 +45,7 @@ public class ActivityTracker extends Activity {
 
     protected static int ARRAYS_INDEX_COUNTER = 0;
 
-
+    private Button seeActivities;
     private Boolean aRadioButtonIsChecked;
 
 
@@ -158,7 +159,7 @@ public class ActivityTracker extends Activity {
                 Toast toast = Toast.makeText(ActivityTracker.this , "Successfully saved activity information.", duration);
                 toast.show();
 
-
+                ARRAYS_INDEX_COUNTER++;
                 Log.i("ActivityTracker ", "SQL MESSAGE: " + activityTypeArray.get(ARRAYS_INDEX_COUNTER) + " " + minutesArray.get(ARRAYS_INDEX_COUNTER) + " " + commentsArray.get(ARRAYS_INDEX_COUNTER) + " " + dateArray.get(ARRAYS_INDEX_COUNTER));
 
 
@@ -168,8 +169,29 @@ public class ActivityTracker extends Activity {
             }
         });
 
+        seeActivities = findViewById(R.id.seeActivities);
+
+        seeActivities.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ActivityTracker.this, ActivityView.class);
+                startActivity(intent);
+
+
+
+
+            }
+        });
+
+
 
     }
+
+
+
+
+
 
 
     public void onRadioButtonClicked(View view) {
@@ -236,5 +258,15 @@ public class ActivityTracker extends Activity {
     public void setActivityType(String activityType) {
         this.activityType = activityType;
     }
+
+
+    public void onDestroy(){
+        super.onDestroy();
+        db.close();
+
+    }
+
+
+
 
 }
