@@ -2,6 +2,8 @@ package com.example.ericpc.groupapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
@@ -27,6 +30,8 @@ public class ActivityView extends Activity {
     private  ActivityAdapter activityAdapter;
     private ListView list;
     private boolean frameLayoutExists;
+    private final int DELETE_REQUEST = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +75,73 @@ public class ActivityView extends Activity {
         frameLayoutExists = findViewById(R.id.message_detail_container) != null;
 
 
+list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String activityType = c.getString(c.getColumnIndex(ActivityDatabaseHelper.ACTIVITY_TYPE));
+                double minutes = c.getDouble(c.getColumnIndex(ActivityDatabaseHelper.MINUTES));
+                String comments = c.getString(c.getColumnIndex(ActivityDatabaseHelper.COMMENTS));
+                String date = c.getString(c.getColumnIndex(ActivityDatabaseHelper.DATE));
+                Bundle bundle = new Bundle();
+                bundle.putLong("id", id);
+
+                bundle.putString("activity", activityType);
+                bundle.putDouble("minutes", minutes);
+                bundle.putString("comments", comments);
+                bundle.putString("date", date);
+
+                bundle.putInt("position", position);
+
+
+                if (!frameLayoutExists){
+                    Intent intent = new Intent(ActivityView.this, ActivityInformation.class);
+                    intent.putExtra("msgActivity", bundle);
+                    startActivityForResult(intent, DELETE_REQUEST);
+                }
+                else {
+                    ActivityFragment fragment = new  ActivityFragment();
+                   fragment.setArguments(bundle);
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.message_detail_container, fragment).commit();
+                }
+
+            }
+        });
+
 
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+
+        if (requestCode == DELETE_REQUEST){
+            if (resultCode == Activity.RESULT_OK){
+
+                Bundle extras = data.getExtras();
+                long id = extras.getLong("id");
+                int position = extras.getInt("position");
+                deleteMessage(id, position);
+            }
+        }
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        super.onConfigurationChanged(newConfig);
+        startActivity(new Intent(this, ActivityView.class));
+    }
+
+    protected void deleteMessage(long id, int position){
+       activityTypeArray.remove(position);
+       minutesArray.remove(position);
+       commentsArray.remove(position);
+       dateArray.remove(position);
+
+        db.delete(ActivityDatabaseHelper.TABLE_NAME, ActivityDatabaseHelper.KEY_ID + "=" + id, null);
+        activityAdapter.notifyDataSetChanged();
+    }
 
     private class ActivityAdapter extends ArrayAdapter<String> {
 
@@ -110,7 +178,20 @@ public class ActivityView extends Activity {
 
 
         }
+
+        @Override
+        public long getItemId(int position){
+            if (c == null)
+                throw new NullPointerException(" cursor is null");
+
+            // refresh the cursors
+            c = db.rawQuery("SELECT * FROM " + ActivityDatabaseHelper.TABLE_NAME, null);
+            c.moveToPosition(position);
+            return c.getLong(c.getColumnIndex(ActivityDatabaseHelper.KEY_ID));
+        }
     }
+
+
 
     public void onDestroy() {
         super.onDestroy();

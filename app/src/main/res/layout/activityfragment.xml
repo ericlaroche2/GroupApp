@@ -23,7 +23,7 @@
         android:layout_below="@+id/msgactivityType"
         android:layout_marginTop="30dp"
         android:textSize="30dp"
-        android:gravity="right"/>
+        />
 
     <TextView
         android:id="@+id/msgComment"
@@ -33,7 +33,27 @@
         android:layout_below="@+id/msgMinutes"
         android:layout_marginTop="30dp"
         android:textSize="30dp"
-        android:gravity="right"/>
+        />
+
+    <TextView
+        android:id="@+id/msgDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgComment"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+      />
+
+    <TextView
+        android:id="@+id/msgID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgDate"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+       />
 
     <Button
         android:id="@+id/btnDeleteMsg"

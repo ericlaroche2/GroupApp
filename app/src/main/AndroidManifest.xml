@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityView" />
-        <activity android:name=".ActivityInformation"></activity>
+        <activity android:name=".ActivityInformation" />
+        <activity android:name=".Progress"></activity>
     </application>
 
 </manifest>

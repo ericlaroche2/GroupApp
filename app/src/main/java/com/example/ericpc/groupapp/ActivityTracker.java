@@ -32,13 +32,10 @@ public class ActivityTracker extends Activity {
     private EditText enterComment;
     private ActivityDatabaseHelper dbHelper;
     private SQLiteDatabase db;
-    private Cursor c;
-    private  ArrayList<String> activityTypeArray = new ArrayList<String>();
-    private ArrayList<Double> minutesArray = new ArrayList<Double>();
-    private ArrayList<String> commentsArray = new ArrayList<String>();
-    private  ArrayList<String> dateArray = new ArrayList<String>();
+
    // when the activity is filed out, enter to push data into the database
     private Button enter;
+    private Button compare;
     private ContentValues contentValue;
     //this will be set from the enterMinutes editText to add into the database
     private double numberOfMinutes;
@@ -47,6 +44,7 @@ public class ActivityTracker extends Activity {
 
     private Button seeActivities;
     private Boolean aRadioButtonIsChecked;
+
 
 
 
@@ -63,27 +61,8 @@ public class ActivityTracker extends Activity {
         dbHelper = new ActivityDatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
 
+      compare = findViewById(R.id.compare);
 
-        c = db.rawQuery("SELECT * FROM " + ActivityDatabaseHelper.TABLE_NAME , null);
-        int columnIndexActivity = c.getColumnIndex(ActivityDatabaseHelper.ACTIVITY_TYPE);
-        int columnIndexMinutues = c.getColumnIndex(ActivityDatabaseHelper.MINUTES);
-        int columnIndexComments = c.getColumnIndex(ActivityDatabaseHelper.COMMENTS);
-        int columnIndexDate= c.getColumnIndex(ActivityDatabaseHelper.DATE);
-
-
-        while(c.moveToNext() ) {
-            String activity_type= c.getString(columnIndexActivity);
-            double minutes = c.getDouble(columnIndexMinutues);
-            String comment = c.getString(columnIndexComments );
-            String date = c.getString(columnIndexDate);
-
-             activityTypeArray.add(activity_type);
-             minutesArray.add(minutes);
-             commentsArray.add(comment);
-         //    dateArray.add(date);
-
-            Log.i("ActivityTracker ", "SQL MESSAGE: " + activity_type + " " + minutes + " " + comment + " " + date);
-        }
 
 // checks if user set a number
         enterMinutes.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -130,32 +109,35 @@ public class ActivityTracker extends Activity {
 
                 contentValue = new ContentValues();
 
-                activityTypeArray.add(activityType);
+
                 contentValue.put(ActivityDatabaseHelper.ACTIVITY_TYPE, activityType);
 
 
-
-
-                minutesArray.add(numberOfMinutes);
                 contentValue.put(ActivityDatabaseHelper.MINUTES, numberOfMinutes);
 
 
-                commentsArray.add(enterComment.getText().toString());
+
                 contentValue.put(ActivityDatabaseHelper.COMMENTS, enterComment.getText().toString());
 
 
-                DateFormat df = new SimpleDateFormat("dd MM yyyy, HH:mm");
+                DateFormat df = new SimpleDateFormat("dd-MM-yyyy, HH:mm");
                 String date = df.format(Calendar.getInstance().getTime());
 
 
-                dateArray.add(date);
+
                 contentValue.put(ActivityDatabaseHelper.DATE, date);
                 db.insert(ActivityDatabaseHelper.TABLE_NAME, "Null Replacement Value", contentValue);
 
 
                 int duration = Toast.LENGTH_LONG;
+
+                enterMinutes.setText("");
+                enterComment.setText("");
+
                 Toast toast = Toast.makeText(ActivityTracker.this , "Successfully saved activity information.", duration);
                 toast.show();
+
+
 
                // ARRAYS_INDEX_COUNTER++;
                // Log.i("ActivityTracker ", "SQL MESSAGE: " + activityTypeArray.get(ARRAYS_INDEX_COUNTER) + " " + minutesArray.get(ARRAYS_INDEX_COUNTER) + " " + commentsArray.get(ARRAYS_INDEX_COUNTER) + " " + dateArray.get(ARRAYS_INDEX_COUNTER));
@@ -169,11 +151,24 @@ public class ActivityTracker extends Activity {
 
         seeActivities = findViewById(R.id.seeActivities);
 
-        seeActivities.setOnClickListener(new View.OnClickListener(){
+            seeActivities.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(ActivityTracker.this, ActivityView.class);
+                startActivity(intent);
+
+
+
+
+            }
+        });
+
+        compare.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ActivityTracker.this, Progress.class);
                 startActivity(intent);
 
 
