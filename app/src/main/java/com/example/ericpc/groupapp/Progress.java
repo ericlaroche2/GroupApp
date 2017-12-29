@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,6 +24,7 @@ public class Progress extends AppCompatActivity {
     private ArrayList<String> dateArray = new ArrayList<String>();
     private EditText previousMonth;
     private EditText currentMont;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +62,15 @@ public class Progress extends AppCompatActivity {
         String month = date.substring(3,5);
 
         int currentMonth = Integer.parseInt(month);
-        int previousMonthnum = currentMonth - 1 ;
+        int previousMonthnum = 0;
+
+        if(currentMonth == 1){
+            previousMonthnum = 12;
+
+        }else{
+            previousMonthnum = currentMonth - 1 ;
+        }
+
         double  lastMonthMinutes = 0;
         double thisMonthMinutes = 0;
 
@@ -78,13 +88,24 @@ public class Progress extends AppCompatActivity {
 
         }
 
-
+       progressBar = findViewById(R.id.progressBar);
         previousMonth = findViewById(R.id.previous);
         currentMont = findViewById(R.id.current);
 
         previousMonth.setText(Double.toString(lastMonthMinutes));
         currentMont.setText(Double.toString(thisMonthMinutes));
 
+      double howMuchFarher;
 
+      if(thisMonthMinutes >= lastMonthMinutes){
+          progressBar.setProgress(100);
+
+      }else{
+          double percent = (thisMonthMinutes / lastMonthMinutes)*100;
+          progressBar.setProgress((int)percent);
+        }
+
+
+        }
     }
-}
+
