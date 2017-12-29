@@ -80,7 +80,7 @@ public class ActivityTracker extends Activity {
              activityTypeArray.add(activity_type);
              minutesArray.add(minutes);
              commentsArray.add(comment);
-             dateArray.add(date);
+         //    dateArray.add(date);
 
             Log.i("ActivityTracker ", "SQL MESSAGE: " + activity_type + " " + minutes + " " + comment + " " + date);
         }
