@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/msgactivityType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/msgMinutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgactivityType"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:gravity="right"/>
+
+    <TextView
+        android:id="@+id/msgComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgMinutes"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:gravity="right"/>
+
+    <Button
+        android:id="@+id/btnDeleteMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Delete Message" />
+
+</RelativeLayout>

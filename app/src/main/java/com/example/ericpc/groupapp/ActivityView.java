@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class ActivityView extends Activity {
     private ArrayList<String> dateArray = new ArrayList<String>();
     private  ActivityAdapter activityAdapter;
     private ListView list;
+    private boolean frameLayoutExists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,10 @@ public class ActivityView extends Activity {
 
 
         }
+
+        frameLayoutExists = findViewById(R.id.message_detail_container) != null;
+
+
 
 
     }
