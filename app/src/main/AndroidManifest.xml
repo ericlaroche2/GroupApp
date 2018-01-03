@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".ActivityView" />
         <activity android:name=".ActivityInformation" />
-        <activity android:name=".Progress"></activity>
+        <activity android:name=".Progress" />
     </application>
 
 </manifest>

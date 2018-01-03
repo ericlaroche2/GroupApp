@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ericpc.groupapp.Progress">
+    tools:context="com.example.ericpc.groupapp.Progress"
+    android:id="@+id/toolbar"
+    >
+
 
     <TextView
         android:id="@+id/textView5"
@@ -13,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
-        android:text="This Month:"
+        android:text="@string/thisMonth"
         app:layout_constraintEnd_toStartOf="@+id/current"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +40,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Last Month:"
+        android:text="@string/lastMonth"
         app:layout_constraintEnd_toStartOf="@+id/previous"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
