@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
 
+
         <activity
             android:name="com.example.ericpc.groupapp.AutoActivity"
             android:label="@string/title_activity_auto"
@@ -34,6 +35,10 @@
 
         <activity android:name="com.example.ericpc.groupapp.AutoStatistics"
             android:label="@string/title_activity_statistics"></activity>
+
+        <activity android:name=".NutritionTracker" />
+
+
     </application>
 
 </manifest>
