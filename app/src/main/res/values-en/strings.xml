@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
     <string name="app_name">GroupApp</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_auto">ADD ENTRY</string>
@@ -14,7 +17,6 @@
     <string name="avg_price">AVERAGE PRICE OF GAS</string>
     <string name="instructions">Version 1.0 - Follow the \'Add Entry\' Button to add a gasoline purchase. Follow the \'View Entries\' to display a list of all entries by date. Clicking on the date will bring up
     details about that entry. From this screen you may delete entries. Follow the \'View Statistics\' to
-    observe the average gasoline purchase and price for the dataset</string>
-
+    observe the average gasoline purchase and price for the dataset. Clicking on the \'Monthly Averages\' gives additional information.</string>
 
 </resources>

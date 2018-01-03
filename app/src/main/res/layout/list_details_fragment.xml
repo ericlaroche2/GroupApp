@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:id="@+id/textViewLiters"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_toRightOf="@id/textViewLiters"
+        android:gravity="center"
+        android:id="@+id/textViewPrice"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_toRightOf="@id/textViewPrice"
+        android:gravity="center"
+        android:id="@+id/textViewKiloms"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <Button
+        android:id="@+id/btnDeleteEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/button_delete" />
+
+
+</RelativeLayout>

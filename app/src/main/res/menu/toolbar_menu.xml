@@ -23,10 +23,12 @@
         android:orderInCategory="103"
         app:showAsAction="always" />
 
-    <item android:id="@+id/action_four"
-        android:title="about"
-        android:icon="@drawable/icons8_apple_50"
 
+    <item
+        android:id="@+id/action_four"
+        android:title="Automobile"
+        android:icon="@drawable/auto_icon"
         android:orderInCategory="104"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
+
 </menu>

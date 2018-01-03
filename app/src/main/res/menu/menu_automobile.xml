@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.alexi.cst2335_finalproject.com.example.ericpc.groupapp.Dashboard">
+
+    <item
+        android:id="@+id/help"
+        android:orderInCategory="100"
+        android:title="Automobile Help"
+        android:icon="@drawable/help_icon"
+        app:showAsAction="always"/>
+
+
+</menu>
