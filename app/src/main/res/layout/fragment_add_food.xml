@@ -1,0 +1,162 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ericpc.groupapp.NutritionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewName"
+                android:layout_below="@+id/textViewName"
+                android:layout_marginTop="45dp"
+                android:text="@string/calories" />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="27dp"
+                android:text="@string/item_name" />
+
+            <TextView
+                android:id="@+id/textViewfat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewCalories"
+                android:layout_below="@+id/textViewCalories"
+                android:layout_marginTop="45dp"
+                android:text="@string/fat" />
+
+            <TextView
+                android:id="@+id/textViewCarb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewfat"
+                android:layout_below="@+id/textViewfat"
+                android:layout_marginTop="45dp"
+                android:text="@string/carbohydrates" />
+
+            <TextView
+                android:id="@+id/textViewprotein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewCarb"
+                android:layout_below="@+id/editTextCarbs"
+                android:layout_marginTop="34dp"
+                android:text="@string/protein" />
+
+            <EditText
+                android:id="@+id/addFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewName"
+                android:layout_alignBottom="@+id/textViewName"
+                android:layout_toEndOf="@+id/textViewCarb"
+                android:ems="10"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewCalories"
+                android:layout_alignBottom="@+id/textViewCalories"
+                android:layout_alignStart="@+id/addFoodName"
+                android:ems="10"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewfat"
+                android:layout_alignBottom="@+id/textViewfat"
+                android:layout_alignStart="@+id/editTextCarbs"
+                android:ems="10"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewCarb"
+                android:layout_alignBottom="@+id/textViewCarb"
+                android:layout_toEndOf="@+id/textViewCarb"
+                android:ems="10"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewprotein"
+                android:layout_alignBottom="@+id/textViewprotein"
+                android:layout_alignStart="@+id/editTextCarbs"
+                android:ems="10"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/addFoodDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/editFood"
+                android:layout_below="@+id/foodDate"
+                android:text="@string/done" />
+
+            <EditText
+                android:id="@+id/foodDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/editTextProtein"
+                android:layout_alignStart="@+id/editTextProtein"
+                android:layout_below="@+id/editTextProtein"
+                android:layout_marginTop="27dp"
+                android:clickable="true"
+                android:editable="false"
+                android:focusable="false" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/foodDate"
+                android:layout_alignBottom="@+id/foodDate"
+                android:layout_alignStart="@+id/textViewprotein"
+                android:text="@string/date"
+                tools:text="Date:" />
+
+            <Button
+                android:id="@+id/deleteFoodButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/editFood"
+                android:layout_alignBottom="@+id/editFood"
+                android:layout_alignStart="@+id/foodDate"
+                android:text="@string/delete"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/editFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/foodDate"
+                android:layout_below="@+id/addFoodDone"
+                android:text="@string/edit"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>
