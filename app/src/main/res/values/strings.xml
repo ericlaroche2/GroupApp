@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">GroupApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_auto">ADD ENTRY</string>
+    <string name="title_activity_display">VIEW ENTRIES</string>
+    <string name="title_activity_statistics">VIEW STATISTCIS</string>
+    <string name="button_save">SAVE</string>
+    <string name="button_delete">DELETE ENTRY</string>
+    <string name="enter_km">Enter Kilometers</string>
+    <string name="enter_price">Enter Price</string>
+    <string name="enter_ltr">Enter Liters</string>
+    <string name="month_avg">MONTHLY AVERAGE</string>
+    <string name="avg_gas">AVERAGE GASOLINE PURCHASED</string>
+    <string name="avg_price">AVERAGE PRICE OF GAS</string>
+    <string name="instructions">Version 1.0 - Follow the \'Add Entry\' Button to add a gasoline purchase. Follow the \'View Entries\' to display a list of all entries by date. Clicking on the date will bring up
+    details about that entry. From this screen you may delete entries. Follow the \'View Statistics\' to
+    observe the average gasoline purchase and price for the dataset</string>
+
 
     <string name="food_nutrition_information_tracker">Food Nutrition information tracker</string>
     <string name="how_to_use_the_app">How to use the app: \n -Add a food item with the bottom button, then enter the name and a numerical value for the other fields. hit done to add the item \n

@@ -18,6 +18,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name="com.example.ericpc.groupapp.AutoActivity"
+            android:label="@string/title_activity_auto"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="com.example.ericpc.groupapp.DisplayList"
+            android:label="@string/title_activity_display"/>
+
+        <activity android:name="com.example.ericpc.groupapp.AutoDetailsActivity"/>
+
+        <activity android:name="com.example.ericpc.groupapp.AutoMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="com.example.ericpc.groupapp.AutoStatistics"
+            android:label="@string/title_activity_statistics"></activity>
+
         <activity android:name=".NutritionTracker" />
 
 

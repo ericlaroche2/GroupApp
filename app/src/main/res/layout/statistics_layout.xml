@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/statsLayout"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="75dp"
+        android:text="@string/month_avg"
+        android:id="@+id/metadataTitle"
+        android:clickable="true"
+        android:onClick="perform_action"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/metadataLiters"
+        android:gravity="center"
+        android:text="@string/avg_gas"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:id="@+id/avgLiters"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_toRightOf="@id/metadataLiters"
+        android:gravity="center"
+        android:id="@+id/metadataPrice"
+        android:text="@string/avg_price"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="185dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:id="@+id/avgPrice"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+</RelativeLayout>
