@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="food_nutrition_information_tracker">Traqueur d\'Information sur la Nutrition</string>
+    <string name="how_to_use_the_app">Comment utiliser l\'application: \n -Ajouter un aliment avec le bouton du bas, puis entrez le nom et une valeur numérique pour les autres champs. appuyer sur ajouter pour ajouter l\'article \n
+        -Pour modifier un élément, cliquez sur l\'élément dans la liste pour ouvrir un fragment contenant les informations saisies précédemment et modifiez-les comme vous le souhaitez. Appuyez sur Modifier pour confirmer les modifications. \n
+        -Pour supprimer un élément, cliquez sur l\'élément dans la liste et cliquez sur le bouton Supprimer pour le l\'eliminer</string>
+    <string name="oops">Non pas inséré</string>
+    <string name="calories">Calories:</string>
+    <string name="item_name">Nom:</string>
+    <string name="fat">Gras:</string>
+    <string name="carbohydrates">Glucides:</string>
+    <string name="protein">Protéine:</string>
+    <string name="done">Fini</string>
+    <string name="date">Date:</string>
+    <string name="edit">Modifier</string>
+    <string name="delete">éliminer</string>
+    <string name="add_food">ajouter</string>
+    <string name="total_protein">Protéine Total </string>
+    <string name="total_carbs">Totaux glucide:</string>
+    <string name="total_fat">Total Gras:</string>
+    <string name="daily_summary">Résumé quotidien</string>
+    <string name="close">fermer</string>
+    <string name="statsUpdated">Statistique actualisé</string>
+    <string name="calperday">cal/jour</string>
+    <string name="avg">Moyenne:</string>
+    <string name="recentday">Jour Récent:</string>
+    <string name="changesSaved">Changement Sauvegadé</string>
+    <string name="Nutritiontitle">Traqueur Nutritionel</string>
+    <string name="about">Information additionel</string>
+</resources>

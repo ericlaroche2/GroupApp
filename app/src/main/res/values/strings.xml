@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">GroupApp</string>
+
+    <string name="food_nutrition_information_tracker">Food Nutrition information tracker</string>
+    <string name="how_to_use_the_app">How to use the app: \n -Add a food item with the bottom button, then enter the name and a numerical value for the other fields. hit done to add the item \n
+        -To edit an item click on the item in the list view to open a fragment containing the previuosly entered information and edit as you wish. Hit edit to confirm changes. \n
+        -To delete an item click on the item in the list view and click on the delete button to remove it</string>
+    <string name="oops">oops forgot to name the item</string>
+    <string name="calories">Calories:</string>
+    <string name="item_name">Item Name:</string>
+    <string name="fat">Fat:</string>
+    <string name="carbohydrates">Carbohydrates:</string>
+    <string name="protein">Protein:</string>
+    <string name="done">done</string>
+    <string name="date">Date:</string>
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+    <string name="add_food">add food</string>
+    <string name="total_protein">Total Protein</string>
+    <string name="total_carbs">Total Carbs:</string>
+    <string name="total_fat">Total fat:</string>
+    <string name="daily_summary">Daily Summary</string>
+    <string name="close">Close</string>
+    <string name="statsUpdated">Stats updated</string>
+    <string name="calperday">cal/day</string>
+    <string name="avg">Avg:</string>
+    <string name="recentday">Recent day:</string>
+    <string name="changesSaved">Changes Saved</string>
+    <string name="Nutritiontitle">Nutrition Tracker</string>
+    <string name="about">about</string>
 </resources>
