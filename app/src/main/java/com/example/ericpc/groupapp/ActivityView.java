@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +21,13 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.xmlpull.v1.XmlPullParser;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ActivityView extends Activity {
@@ -31,6 +42,10 @@ public class ActivityView extends Activity {
     private ListView list;
     private boolean frameLayoutExists;
     private final int DELETE_REQUEST = 10;
+    private int columnIndexActivity;
+    private int  columnIndexMinutues;
+    private int  columnIndexComments;
+    private int columnIndexDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,39 +53,8 @@ public class ActivityView extends Activity {
         setContentView(R.layout.activity_view);
 
         list = findViewById(R.id.listView);
-
-
-        dbHelper = new ActivityDatabaseHelper(this);
-        db = dbHelper.getWritableDatabase();
-       // db.delete(ActivityDatabaseHelper.TABLE_NAME, null,null);
-        c = db.rawQuery("SELECT * FROM " + ActivityDatabaseHelper.TABLE_NAME, null);
-        int columnIndexActivity = c.getColumnIndex(ActivityDatabaseHelper.ACTIVITY_TYPE);
-        int columnIndexMinutues = c.getColumnIndex(ActivityDatabaseHelper.MINUTES);
-        int columnIndexComments = c.getColumnIndex(ActivityDatabaseHelper.COMMENTS);
-        int columnIndexDate = c.getColumnIndex(ActivityDatabaseHelper.DATE);
-
-
-        //Set Listview adapter
-        activityAdapter = new ActivityAdapter(this);
-        list.setAdapter (activityAdapter);
-
-        while (c.moveToNext()) {
-            String activity_type = c.getString(columnIndexActivity);
-            double minutes = c.getDouble(columnIndexMinutues);
-            String comment = c.getString(columnIndexComments);
-            String date = c.getString(columnIndexDate);
-
-            activityTypeArray.add(activity_type);
-            minutesArray.add(minutes);
-            commentsArray.add(comment);
-            dateArray.add(date);
-
-           activityAdapter.notifyDataSetChanged();
-
-            Log.i("ActivityTracker ", "SQL MESSAGE: " + activity_type + " " + minutes + " " + comment + " " + date);
-
-
-        }
+       OpenDatabase open = new OpenDatabase();
+       open.execute();
 
         frameLayoutExists = findViewById(R.id.message_detail_container) != null;
 
@@ -199,4 +183,49 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
     }
 
+
+    private class OpenDatabase extends AsyncTask<String, Integer, String> {
+
+
+        @Override
+        protected String doInBackground(String... params) {
+            dbHelper = new ActivityDatabaseHelper(getApplicationContext());
+            db = dbHelper.getWritableDatabase();
+            // db.delete(ActivityDatabaseHelper.TABLE_NAME, null,null);
+            c = db.rawQuery("SELECT * FROM " + ActivityDatabaseHelper.TABLE_NAME, null);
+            columnIndexActivity = c.getColumnIndex(ActivityDatabaseHelper.ACTIVITY_TYPE);
+             columnIndexMinutues = c.getColumnIndex(ActivityDatabaseHelper.MINUTES);
+            columnIndexComments = c.getColumnIndex(ActivityDatabaseHelper.COMMENTS);
+            columnIndexDate = c.getColumnIndex(ActivityDatabaseHelper.DATE);
+
+
+            return null;
+        }
+
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            activityAdapter = new ActivityAdapter(getApplicationContext());
+            list.setAdapter (activityAdapter);
+
+            while (c.moveToNext()) {
+                String activity_type = c.getString(columnIndexActivity);
+                double minutes = c.getDouble(columnIndexMinutues);
+                String comment = c.getString(columnIndexComments);
+                String date = c.getString(columnIndexDate);
+
+                activityTypeArray.add(activity_type);
+                minutesArray.add(minutes);
+                commentsArray.add(comment);
+                dateArray.add(date);
+
+                activityAdapter.notifyDataSetChanged();
+
+                Log.i("ActivityTracker ", "SQL MESSAGE: " + activity_type + " " + minutes + " " + comment + " " + date);
+
+
+            }
 }
+
+}}
