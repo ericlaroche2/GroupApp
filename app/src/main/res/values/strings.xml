@@ -65,4 +65,20 @@
     <string name="step5">5. Press see all activities to see the list view of all activities completed. You can click  on the activity to delete or modify.</string>
     <string name="step6">4. Press compare button to compare the amount of minutes by  month</string>
 
+    <string name="T_app_name">Thermostat</string>
+    <string name="T_NewRule">Add New Setting</string>
+    <string name="T_Save">Save</string>
+    <string name="T_SaveAsNew">Save As New</string>
+    <string name="T_Delete">Delete</string>
+    <string name="T_DeleteQuery">Do you want to delete this rule?</string>
+    <string name="T_Cancel">Cancel</string>
+    <string name="T_Temperature">Temperature ℃</string>
+    <string name="T_Deleted">Thermostat Setting Deleted</string>
+    <string name="T_Updated">Setting Updated</string>
+    <string name="T_Added">Setting Added</string>
+    <string name="T_About">About</string>
+    <string name="T_Instructions">Instructions: Press ADD NEW SETTING to start creating a new temperature setting. Options for your new setting will appear. Select the time of day, day of the week, and temperature. When you are ready, press SAVE AS NEW. The new temperature setting will appear in the list. You can click on any setting in the list to see the options again. You can make any changes and save them by pressing SAVE, or press SAVE AS NEW to create another new setting. You can Also press DELETE, to delete the setting from the list.</string>
+    <string name="T_Author">Created by: Alexander Mastropietro</string>
+    <string name="T_Version">Version: 1.0</string>
+
 </resources>

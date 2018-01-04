@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GroupApp.iml" filepath="$PROJECT_DIR$/GroupApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GroupApp.iml" filepath="$PROJECT_DIR$/.idea/GroupApp.iml" />
+      <module fileurl="file://C:\Users\alexa\AndroidStudioProjects\GroupApp\GroupApp.iml" filepath="C:\Users\alexa\AndroidStudioProjects\GroupApp\GroupApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

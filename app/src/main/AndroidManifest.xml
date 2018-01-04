@@ -43,12 +43,18 @@
 
 
 
-        <activity android:name=".ActivityTracker">
-
-        </activity>
+        <activity android:name=".ActivityTracker"></activity>
         <activity android:name=".ActivityView" />
         <activity android:name=".ActivityInformation" />
         <activity android:name=".Progress" />
+
+        <activity
+            android:name=".Thermostat"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".ThermostatDetails"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            />
     </application>
 
 </manifest>

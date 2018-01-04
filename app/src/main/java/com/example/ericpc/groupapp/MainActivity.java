@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_two:
+                Intent ThermoIntent = new Intent(this, Thermostat.class);
+                startActivity(ThermoIntent);
 
                 return true;
             case R.id.action_three:

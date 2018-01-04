@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Termostato</string>
+    <string name="NewRule">Nuova Regola</string>
+    <string name="Save">salva</string>
+    <string name="SaveAsNew">Nuova Regola</string>
+    <string name="Delete">Elimina</string>
+    <string name="DeleteQuery">Vuoi eliminare questa regola??</string>
+    <string name="Cancel">No</string>
+    <string name="Temperature">Temperatura ℃</string>
+    <string name="Deleted">Regola Cancellata</string>
+    <string name="Updated">Regola Aggiornata</string>
+    <string name="Added">Regola Aggiunta</string>
+    <string name="About">Manuale</string>
+    <string name="Instructions">Istruzioni: Premere NUOVA REGOLA per iniziare a creare una nuova impostazione di temperatura. Appariranno le opzioni per la nuova impostazione. Selezionare l\'ora del giorno, il giorno della settimana e la temperatura. Quando sei pronto, premi NUOVA REGOLA. La nuova impostazione della temperatura verrà visualizzata nell\'elenco. È possibile fare clic su qualsiasi impostazione nell'elenco per visualizzare di nuovo le opzioni. È possibile apportare modifiche e salvarle premendo SALVA oppure premere NUOVA REGOLA per creare un'altra nuova impostazione. È anche possibile premere ELIMINA per eliminare l'impostazione dall'elenco.</string>
+    <string name="Author">Creato da: Alexander Mastropietro</string>
+    <string name="Version">Versione: 1.0</string>
+</resources>
