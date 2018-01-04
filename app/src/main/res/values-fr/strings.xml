@@ -28,4 +28,25 @@
     <string name="changesSaved">Changement Sauvegadé</string>
     <string name="Nutritiontitle">Traqueur Nutritionel</string>
     <string name="about">Information additionel</string>
+
+    <string name="running">Courir</string>
+    <string name="walking">Marche</string>
+    <string name="biking">Cyclisme</string>
+    <string name="swimming">Nager</string>
+    <string name="skating">Patin</string>
+    <string name="chooseActivity">Choisissez une activité:</string>
+    <string name="howMany">Combien de minutes?:</string>
+    <string name="enter">soumettre</string>
+    <string name="seeActivities">Voir toutes les activités</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="compare">Comparer</string>
+    <string name="deleteMessage">Supprimer le message</string>
+
+    <string name="activityTrackerCreator">Créé par Elie Massaad</string>
+    <string name="step1">1.Sélectionnez une activité dans la liste.</string>
+    <string name="step2">2.Tapez le nombre de minutes complétées (chiffres seulement)</string>
+    <string name="step3">3.Tapez un commentaire que vous souhaitez enregistrer.</string>
+    <string name="step4">4.Appuyez sur le bouton Soumettre pour enregistrer les données</string>
+    <string name="step5">5.Appuyez sur voir toutes les activités pour voir la liste de toutes les activités terminées. Vous pouvez cliquer sur l\'activité à supprimer ou modifier.</string>
+    <string name="step6">4.Appuyez sur le bouton de comparaison pour comparer le nombre de minutes par mois.</string>
 </resources>
