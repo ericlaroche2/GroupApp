@@ -12,7 +12,7 @@
     <string name="month_avg">MONTHLY AVERAGE</string>
     <string name="avg_gas">AVERAGE GASOLINE PURCHASED</string>
     <string name="avg_price">AVERAGE PRICE OF GAS</string>
-    <string name="instructions">Version 1.0 - Follow the \'Add Entry\' Button to add a gasoline purchase. Follow the \'View Entries\' to display a list of all entries by date. Clicking on the date will bring up
+    <string name="instructions">Version 1.0 By Alexis Small - Follow the \'Add Entry\' Button to add a gasoline purchase. Follow the \'View Entries\' to display a list of all entries by date. Clicking on the date will bring up
     details about that entry. From this screen you may delete entries. Follow the \'View Statistics\' to
     observe the average gasoline purchase and price for the dataset</string>
 
