@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
             case R.id.action_three:
-
+                Intent Activityintent = new Intent(this, ActivityTracker.class);
+                startActivity(Activityintent);
                 return true;
 
             case R.id.action_four:
