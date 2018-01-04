@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+
+    <TextView
+        android:id="@+id/msgactivityType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/msgMinutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgactivityType"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/msgComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgMinutes"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/msgDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgComment"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+      />
+
+    <TextView
+        android:id="@+id/msgID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/msgDate"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+       />
+
+    <Button
+        android:id="@+id/btnDeleteMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/deleteMessage" />
+
+</RelativeLayout>

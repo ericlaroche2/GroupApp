@@ -44,4 +44,25 @@
     <string name="changesSaved">Changes Saved</string>
     <string name="Nutritiontitle">Nutrition Tracker</string>
     <string name="about">about</string>
+    <string name="running">Running</string>
+    <string name="walking">Walking</string>
+    <string name="biking">Biking</string>
+    <string name="swimming">Swimming</string>
+    <string name="skating">Skating</string>
+    <string name="chooseActivity">Choose an Activity:</string>
+    <string name="howMany">How many minutes?:</string>
+    <string name="enter">Enter</string>
+    <string name="seeActivities">See all Activities</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="compare">Compare</string>
+    <string name="deleteMessage">Delete Message</string>
+
+    <string name="activityTrackerCreator">Created by Elie Massaad</string>
+    <string name="step1">1. Select an activity from the list.</string>
+    <string name="step2">2. Type  the number of minutes completed(Numbers only)</string>
+    <string name="step3">3. Type a comment you may wan to save.</string>
+    <string name="step4">4. Press the Enter Button to save the data</string>
+    <string name="step5">5. Press see all activities to see the list view of all activities completed. You can click  on the activity to delete or modify.</string>
+    <string name="step6">4. Press compare button to compare the amount of minutes by  month</string>
+
 </resources>
