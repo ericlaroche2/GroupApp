@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import  android.support.design.widget.Snackbar;
+import android.widget.TextView;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class Progress extends AppCompatActivity {
     private EditText previousMonth;
     private EditText currentMont;
     private ProgressBar progressBar;
+    private TextView previousText;
+    private TextView currentText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +64,8 @@ public class Progress extends AppCompatActivity {
 
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy, HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
-
+        currentText = findViewById(R.id.currenText);
+        previousText = findViewById(R.id.previousText);
         String month = date.substring(3, 5);
 
         int currentMonth = Integer.parseInt(month);
@@ -68,9 +73,52 @@ public class Progress extends AppCompatActivity {
 
         if (currentMonth == 1) {
             previousMonthnum = 12;
-
-        } else {
+            currentText.setText("January:");
+            previousText.setText("December:");
+        } else if(currentMonth == 2) {
             previousMonthnum = currentMonth - 1;
+            currentText.setText("February:");
+            previousText.setText("January:");
+        }else if(currentMonth == 3) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("March:");
+            previousText.setText("February:");
+        }else if(currentMonth == 4) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("April:");
+            previousText.setText("March:");
+        }else if(currentMonth == 5) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("May:");
+            previousText.setText("April:");
+        }else if(currentMonth == 6) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("June:");
+            previousText.setText("May:");
+        }else if(currentMonth == 7) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("July:");
+            previousText.setText("June:");
+        }else if(currentMonth == 8) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("August:");
+            previousText.setText("July:");
+        }else if(currentMonth == 9) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("September");
+            previousText.setText("August");
+        }else if(currentMonth == 10) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("October:");
+            previousText.setText("September:");
+        }else if(currentMonth == 11) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("November:");
+            previousText.setText("October:");
+        }else if(currentMonth == 12) {
+            previousMonthnum = currentMonth - 1;
+            currentText.setText("December:");
+            previousText.setText("November:");
         }
 
         double lastMonthMinutes = 0;
