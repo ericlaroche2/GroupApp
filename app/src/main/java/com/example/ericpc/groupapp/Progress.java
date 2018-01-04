@@ -147,11 +147,11 @@ public class Progress extends AppCompatActivity {
         previousMonth.setText(Double.toString(lastMonthMinutes));
         currentMont.setText(Double.toString(thisMonthMinutes));
 
-        double howMuchFarher;
+
         double percent = 0;
         View view = findViewById(R.id.toolbar);
 
-        if (thisMonthMinutes >= lastMonthMinutes) {
+        if (thisMonthMinutes >= lastMonthMinutes || lastMonthMinutes == 0) {
             progressBar.setProgress(100);
             Snackbar.make(view, "Great Job! You've worked out more this month!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
@@ -172,7 +172,7 @@ public class Progress extends AppCompatActivity {
             Snackbar.make(view, "You are half way there!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
 
-        } else if (percent < 50) {
+        } else if (percent < 50 && percent > 0) {
             Snackbar.make(view, "You will get there!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
 
