@@ -9,9 +9,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.view.KeyEventCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -20,13 +24,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class ActivityTracker extends Activity {
+public class ActivityTracker extends AppCompatActivity {
     private  String activityType;
     private EditText enterMinutes;
     private EditText enterComment;
@@ -53,6 +56,11 @@ public class ActivityTracker extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracker);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.activity_tracker_toolbar);
+        setSupportActionBar(myToolbar);
+
+
+
 
         enterMinutes =  findViewById(R.id.enterMinutes);
         enterComment = findViewById(R.id.enterComment);
@@ -136,11 +144,6 @@ public class ActivityTracker extends Activity {
 
                 Toast toast = Toast.makeText(ActivityTracker.this , "Successfully saved activity information.", duration);
                 toast.show();
-
-
-
-               // ARRAYS_INDEX_COUNTER++;
-               // Log.i("ActivityTracker ", "SQL MESSAGE: " + activityTypeArray.get(ARRAYS_INDEX_COUNTER) + " " + minutesArray.get(ARRAYS_INDEX_COUNTER) + " " + commentsArray.get(ARRAYS_INDEX_COUNTER) + " " + dateArray.get(ARRAYS_INDEX_COUNTER));
 
 
 
@@ -260,6 +263,32 @@ public class ActivityTracker extends Activity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu (Menu m){
+        getMenuInflater().inflate(R.menu.activty_tracker_menu, m );
+
+        return true;
+
+    }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_one:
+
+
+
+
+            return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 }
+
+
