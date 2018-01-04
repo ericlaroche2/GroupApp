@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_alert_dialog"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:src="@drawable/activity_tracker_help"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#FFFFBB33"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/createdby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activityTrackerCreator" />
+
+    <TextView
+        android:id="@+id/step1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step1" />
+    <TextView
+        android:id="@+id/step2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step2" />
+
+    <TextView
+        android:id="@+id/step3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step3" />
+    <TextView
+        android:id="@+id/step4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step4" />
+
+    <TextView
+        android:id="@+id/step5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step5" />
+    <TextView
+        android:id="@+id/step6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/step6" />
+
+
+</LinearLayout>

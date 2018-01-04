@@ -15,4 +15,12 @@
     <string name="compare">Compare</string>
     <string name="deleteMessage">Delete Message</string>
 
+    <string name="activityTrackerCreator">Created by Elie Massaad</string>
+    <string name="step1">1. Select an activity from the list.</string>
+    <string name="step2">2. Type  the number of minutes completed(Numbers only)</string>
+    <string name="step3">3. Type a comment you may wan to save.</string>
+    <string name="step4">4. Press the Enter Button to save the data</string>
+    <string name="step5">5. Press see all activities to see the list view of all activities completed. You can click  on the activity to delete or modify.</string>
+    <string name="step6">4. Press compare button to compare the amount of minutes by  month</string>
+
 </resources>

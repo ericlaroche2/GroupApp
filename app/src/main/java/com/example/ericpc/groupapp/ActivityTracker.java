@@ -1,32 +1,25 @@
 package com.example.ericpc.groupapp;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.view.KeyEventCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ActivityTracker extends AppCompatActivity {
@@ -275,19 +268,28 @@ public class ActivityTracker extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_one:
+            case R.id.action_help:
+                Log.d("Toolbar", "Option 3 selected");
+                LayoutInflater inflater = getLayoutInflater();
+                LinearLayout rootView = (LinearLayout)inflater.inflate(R.layout.activity_tracker_custom_alert, null);
 
 
-
-
-            return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ActivityTracker.this);
+                // Inflate and set the layout for the dialog
+                // pass null as the parent view because its going in the dialog layout
+                builder.setView(rootView)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                             return;
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                break;
 
         }
+      return true;
     }
 }
 
